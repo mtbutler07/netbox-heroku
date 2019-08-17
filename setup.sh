@@ -13,3 +13,4 @@ rm -r ./temp
 rm ./netbox/netbox/configuration.example.py
 cp configuration.py ./netbox/netbox/configuration.py
 cp settings.py ./netbox/netbox/
+python3 netbox/manage.py collectstatic --no-input
