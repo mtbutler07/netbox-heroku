@@ -6,8 +6,7 @@ from pathlib import Path
 
 # Set dotenv path
 env_path = Path('../..') / '.env'
-if os.path.isfile(env_path):
-    load_dotenv(dotenv_path=env_path)
+load_dotenv(dotenv_path=env_path)
 
 #########################
 #                       #
