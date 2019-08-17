@@ -6,8 +6,7 @@ from pathlib import Path
 
 # Set dotenv path
 env_path = Path('../..') / '.env'
-if os.path.isfile(env_path):
-    load_dotenv(dotenv_path=env_path)
+load_dotenv(dotenv_path=env_path)
 
 #########################
 #                       #
@@ -23,8 +22,7 @@ ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS")
 
 
 # Heroku PostgreSQL database configuration.
-DATABASE = {}
-DATABASE['default'] = dj_database_url.config(conn_max_age=600)
+DATABASE = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
 # This key is used for secure generation of random numbers and strings. It must never be exposed outside of this file.
