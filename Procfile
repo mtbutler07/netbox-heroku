@@ -1,1 +1,1 @@
-web: gunicorn -c gunicorn_config.py netbox.wsgi
+web: gunicorn -c 'gunicorn_config.py' netbox-heroku.wsgi
