@@ -13,6 +13,8 @@ from django.core.exceptions import ImproperlyConfigured
 # Environment setup
 #
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
 VERSION = '2.6.2'
 
 # Hostname
