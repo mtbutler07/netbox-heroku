@@ -1,11 +1,13 @@
 import os
+import dj_database_url
 from dotenv import load_dotenv
 from pathlib import Path
 
 
 # Set dotenv path
 env_path = Path('../..') / '.env'
-load_dotenv(dotenv_path=env_path)
+if os.path.isfile(env_path):
+    load_dotenv(dotenv_path=env_path)
 
 #########################
 #                       #
@@ -20,14 +22,9 @@ load_dotenv(dotenv_path=env_path)
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS")
 
 
-# PostgreSQL database configuration.
-DATABASE = {
-    'NAME': os.environ.get("POSTGRESQL_DB_NAME"),            # Database name
-    'USER': os.environ.get("POSTGRESQL_USER"),               # PostgreSQL username
-    'PASSWORD': os.environ.get("POSTGRESQL_PASSWORD"),       # PostgreSQL password
-    'HOST': os.environ.get("POSTGRESQL_HOST"),               # Database server
-    'PORT': os.environ.get("POSTGRESQL_PORT"),               # Database port (leave blank for default)
-}
+# Heroku PostgreSQL database configuration.
+DATABASE = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
 
 # This key is used for secure generation of random numbers and strings. It must never be exposed outside of this file.
 # For optimal security, SECRET_KEY should be at least 50 characters in length and contain a mix of letters, numbers, and

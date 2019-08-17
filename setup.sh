@@ -9,6 +9,7 @@ echo napalm >> requirements.txt
 echo gunicorn >> requirements.txt
 echo whitenoise >> requirements.txt
 echo python-dotenv >> requirements.txt
+echo dj_database_url >> requirements.txt
 rm -r ./temp
 rm ./netbox/netbox/configuration.example.py
 cp configuration.py ./netbox/netbox/configuration.py
