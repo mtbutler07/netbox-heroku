@@ -3,6 +3,7 @@ import os
 import platform
 import socket
 import warnings
+from whitenoise import WhiteNoise
 
 from django.contrib.messages import constants as messages
 from django.core.exceptions import ImproperlyConfigured
@@ -17,8 +18,6 @@ VERSION = '2.6.2'
 # Hostname
 HOSTNAME = platform.node()
 
-# Whitenoise Static Files
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Set the base directory two levels up
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -249,13 +248,10 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 USE_X_FORWARDED_HOST = True
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
-
-# Extra places for collectstatic to find static files.
+STATIC_ROOT = BASE_DIR + '/static'
+STATIC_URL = '/{}static/'.format(BASE_PATH)
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, "project-static"),
 )
 
 # Media
