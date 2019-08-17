@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from pathlib import Path
 
+
 # Set dotenv path
 env_path = Path('../..') / '.env'
 load_dotenv(dotenv_path=env_path)
@@ -17,6 +18,7 @@ load_dotenv(dotenv_path=env_path)
 #
 # Example: ALLOWED_HOSTS = ['netbox.example.com', 'netbox.internal.local']
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS")
+
 
 # PostgreSQL database configuration.
 DATABASE = {
@@ -41,7 +43,7 @@ REDIS = {
     'DATABASE': 0,
     'CACHE_DATABASE': 1,
     'DEFAULT_TIMEOUT': 300,
-    'SSL': False,
+    'SSL': True,
 }
 
 
