@@ -39,7 +39,7 @@ REDIS = {
     'DATABASE': 0,
     'CACHE_DATABASE': 1,
     'DEFAULT_TIMEOUT': 300,
-    'SSL': True,
+    'SSL': False,
 }
 
 

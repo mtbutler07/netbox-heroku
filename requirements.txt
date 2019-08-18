@@ -25,3 +25,4 @@ gunicorn
 whitenoise
 python-dotenv
 dj_database_url
+django-redis-cache
