@@ -28,11 +28,12 @@ napalm = "*"
 gunicorn = "*"
 whitenoise = "*"
 python-dotenv = "*"
+django-heroku = "*"
+dj-database-url = "*"
 Django = ">=2.2,<2.3"
 Jinja2 = "==2.10.1"
 Markdown = "==2.6.11"
 Pillow = "==6.0.0"
-dj-database-url = "*"
 
 [requires]
 python_version = "3.7"

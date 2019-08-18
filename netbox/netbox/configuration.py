@@ -18,7 +18,7 @@ load_dotenv(dotenv_path=env_path)
 # access to the server via any other hostnames. The first FQDN in the list will be treated as the preferred name.
 #
 # Example: ALLOWED_HOSTS = ['netbox.example.com', 'netbox.internal.local']
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS")
+ALLOWED_HOSTS = ['*']
 
 
 # Heroku PostgreSQL database configuration.
